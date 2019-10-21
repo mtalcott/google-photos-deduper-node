@@ -272,7 +272,7 @@ if (process.env.NODE_ENV === 'development') {
 /**
  * App routes.
  */
-app.get('/start', homeController.start);
+app.get('/start', passportConfig.isAuthenticated, /*passportConfig.isAuthorized,*/ homeController.start);
 
 /**
  * Start Express server.

@@ -4,14 +4,13 @@ WORKDIR /starter
 ENV NODE_ENV development
 
 COPY package.json /starter/package.json
+COPY package-lock.json /starter/package-lock.json
 
-RUN npm install --production
-RUN npm install -g nodemon
+RUN npm install
 
 COPY .env.example /starter/.env.example
 COPY . /starter
 
-# CMD ["npm","start"]
-CMD ["npm","run","start.dev"]
+CMD ["npm","start"]
 
 EXPOSE 8080

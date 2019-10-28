@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const mediaItemSchema = new mongoose.Schema({
-  id: { type: String, unique: true },
-  userId: String,
+  id: {type: String, unique: true},
+  userId: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   baseUrl: String,
   productUrl: String,
   mimeType: String,
@@ -20,7 +20,7 @@ const mediaItemSchema = new mongoose.Schema({
     //   isoEquivalent: Number
     // }
   }
-}, { timestamps: true });
+}, {timestamps: true});
 
 const MediaItem = mongoose.model('MediaItem', mediaItemSchema);
 

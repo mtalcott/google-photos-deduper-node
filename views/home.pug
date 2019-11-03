@@ -10,7 +10,10 @@ block content
           h4 Features
           | Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse.
         .mdl-card__actions
-          a.mdl-button(href='#') Read our features
+          form.inline(method="post" action="/job")
+            input(type='hidden', name='_csrf', value=_csrf)
+            button.mdl-button(type="submit") Get started
+          //- a.mdl-button(href='/start') Get started
       button#btn1.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--icon
         i.material-icons more_vert
       ul.mdl-menu.mdl-js-menu.mdl-menu--bottom-right(for='btn1')

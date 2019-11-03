@@ -31,6 +31,7 @@ dotenv.config({ path: '.env.example' });
  */
 const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
+const jobController = require('./controllers/job');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
 
@@ -135,6 +136,8 @@ app.get('/reset/:token', userController.getReset);
 app.post('/reset/:token', userController.postReset);
 app.get('/signup', userController.getSignup);
 app.post('/signup', userController.postSignup);
+app.post('/job', passportConfig.isAuthenticated, jobController.postJob);
+app.get('/job/:id', passportConfig.isAuthenticated, jobController.getJob);
 app.get('/contact', contactController.getContact);
 app.post('/contact', contactController.postContact);
 app.get('/account/verify', passportConfig.isAuthenticated, userController.getVerifyEmail);
@@ -268,11 +271,6 @@ if (process.env.NODE_ENV === 'development') {
     res.status(500).send('Server Error');
   });
 }
-
-/**
- * App routes.
- */
-app.get('/start', passportConfig.isAuthenticated, /*passportConfig.isAuthorized,*/ homeController.start);
 
 /**
  * Start Express server.

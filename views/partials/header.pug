@@ -1,39 +1,72 @@
-.navbar.navbar-light.fixed-top.navbar-expand-lg
-  .container
-    a.navbar-brand(href='/')
-      i.fas.fa-cube
-      | Project name
-    button.navbar-toggler(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-      span.sr-only Toggle navigation
-      span.navbar-toggler-icon
-    .collapse.navbar-collapse
-      ul.nav.navbar-nav
-        li.nav-item(class=(title === 'Home') ? 'active' : undefined)
-          a.nav-link(href='/') Home
-        li.nav-item(class=(title === 'API Examples') ? 'active' : undefined)
-          a.nav-link(href='/api') API Examples
-        li.nav-item(class=(title === 'Contact') ? 'active' : undefined)
-          a.nav-link(href='/contact') Contact
-        li.nav-item(class=(title === 'Status') ? 'active' : undefined)
-          a.nav-link(href='/status') Status
-      ul.nav.navbar-nav.ml-auto
-        if !user
-          li.nav-item(class=(title === 'Login') ? 'active' : undefined)
-            a.nav-link(href='/login') Login
-          li.nav-item(class=(title === 'Create Account') ? 'active' : undefined)
-            a.nav-link(href='/signup') Create Account
-        else
-          li.dropdown(class=(title === 'Account Management') ? 'active' : undefined).nav-item
-            a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown')
-              if user.profile.picture
-                img(src=user.profile.picture)
-              else
-                img(src=user.gravatar(60))
-              span= user.profile.name || user.email || user.id
-              i.caret
-            ul.dropdown-menu
-              li.dropdown-item
-                a(href='/account') My Account
-              li.divider.dropdown-item
-              li.dropdown-item
-                a(href='/logout') Logout
+header.mdl-layout__header.mdl-layout__header--scroll.mdl-color--primary
+  //- .mdl-layout--large-screen-only.mdl-layout__header-row
+  .mdl-layout__header-row
+    .mdl-layout-title Name &amp; Title
+    .mdl-layout-spacer
+    nav.mdl-navigation
+      if !user
+        a.mdl-navigation__link(href='/login' class=(title === 'Login') ? 'is-active' : undefined) Login
+        a.mdl-navigation__link(href='/signup' class=(title === 'Create Account') ? 'is-active' : undefined) Create Account
+      else
+        //- label.mdl-button.mdl-js-button.mdl-button--icon
+        //-   i.material-icons search
+        
+        button.mdl-chip.mdl-chip--contact(id="account-management-dropdown")
+          if user.profile.picture
+            img.mdl-chip__contact(src=user.profile.picture)
+          else
+            img.mdl-chip__contact(src=user.gravatar(60))
+          span.mdl-chip__text= user.profile.name || user.email || user.id
+          a.mdl-chip__action
+            i.material-icons arrow_drop_down
+        ul.mdl-menu.mdl-menu--bottom-right.mdl-js-menu.mdl-js-ripple-effect(for="account-management-dropdown")
+          a.mdl-menu__item(href='/account') My Account
+          a.mdl-menu__item(href='/logout') Logout
+    
+  //- .mdl-layout--large-screen-only.mdl-layout__header-row
+  .mdl-layout__tab-bar.mdl-js-ripple-effect.mdl-color--primary-dark
+    a.mdl-layout__tab.is-active(href='#home') Home
+    a.mdl-layout__tab(href='#faq') FAQ
+    .mdl-layout-spacer
+
+
+
+//- .navbar.navbar-light.fixed-top.navbar-expand-lg
+//-   .container
+//-     a.navbar-brand(href='/')
+//-       i.fas.fa-cube
+//-       | Project name
+//-     button.navbar-toggler(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+//-       span.sr-only Toggle navigation
+//-       span.navbar-toggler-icon
+//-     .collapse.navbar-collapse
+//-       ul.nav.navbar-nav
+//-         li.nav-item(class=(title === 'Home') ? 'active' : undefined)
+//-           a.nav-link(href='/') Home
+//-         li.nav-item(class=(title === 'API Examples') ? 'active' : undefined)
+//-           a.nav-link(href='/api') API Examples
+//-         li.nav-item(class=(title === 'Contact') ? 'active' : undefined)
+//-           a.nav-link(href='/contact') Contact
+//-         li.nav-item(class=(title === 'Status') ? 'active' : undefined)
+//-           a.nav-link(href='/status') Status
+//-       ul.nav.navbar-nav.ml-auto
+//-         if !user
+//-           li.nav-item(class=(title === 'Login') ? 'active' : undefined)
+//-             a.nav-link(href='/login') Login
+//-           li.nav-item(class=(title === 'Create Account') ? 'active' : undefined)
+//-             a.nav-link(href='/signup') Create Account
+//-         else
+//-           li.dropdown(class=(title === 'Account Management') ? 'active' : undefined).nav-item
+//-             a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown')
+//-               if user.profile.picture
+//-                 img(src=user.profile.picture)
+//-               else
+//-                 img(src=user.gravatar(60))
+//-               span= user.profile.name || user.email || user.id
+//-               i.caret
+//-             ul.dropdown-menu
+//-               li.dropdown-item
+//-                 a(href='/account') My Account
+//-               li.divider.dropdown-item
+//-               li.dropdown-item
+//-                 a(href='/logout') Logout

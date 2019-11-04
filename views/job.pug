@@ -1,0 +1,18 @@
+extends layout-mdl
+
+block content
+  section#jobPage.section--center.mdl-grid
+    - var values = [1, 2, 3, 4, 5, 6];
+    each val in values.length ? values : ['There are no values']
+      .demo-card-wide.mdl-cell.mdl-cell--4-col.mdl-card.mdl-shadow--2dp
+        .mdl-card__title
+          h2.mdl-card__title-text Welcome
+        .mdl-card__supporting-text
+          | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          | Mauris sagittis pellentesque lacus eleifend lacinia...
+        .mdl-card__actions.mdl-card--border
+          a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect
+            | View Details
+        .mdl-card__menu
+          button.mdl-button.mdl-button--icon.mdl-js-button.mdl-js-ripple-effect
+            i.material-icons share

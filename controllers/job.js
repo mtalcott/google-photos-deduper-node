@@ -38,15 +38,16 @@ exports.getJob = async (req, res) => {
   
   
 
-  // res.format({
-  //   json: () => {
+  res.format({
+    json: () => {
       res.json({data: {job, jobStatus}});
-  //   },
-  //   html: () => {
-  //     // res.render('jobStatus', {
-  //     //   title: 'Job Status',
-  //     //   jobStatus
-  //     // });
-  //   }
-  // });
+    },
+    html: () => {
+      res.render('job', {
+        title: 'Job Status',
+        job,
+        jobStatus
+      });
+    }
+  });
 };

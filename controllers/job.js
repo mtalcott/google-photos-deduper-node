@@ -1,5 +1,6 @@
 const agenda = require('../lib/agenda');
 const ObjectId = require('mongoose').Types.ObjectId;
+const JobStatus = require('../models/JobStatus');
 
 /**
  * POST /job
@@ -33,11 +34,19 @@ exports.getJob = async (req, res) => {
     _id: ObjectId(jobId)
   });
   let job = jobs[0];
+  let jobStatus = await JobStatus.findOne({jobId});
   
-  res.json({data: {job}});
+  
 
-  // res.render('jobStatus', {
-  //   title: 'Job Status',
-  //   jobStatus
+  // res.format({
+  //   json: () => {
+      res.json({data: {job, jobStatus}});
+  //   },
+  //   html: () => {
+  //     // res.render('jobStatus', {
+  //     //   title: 'Job Status',
+  //     //   jobStatus
+  //     // });
+  //   }
   // });
 };

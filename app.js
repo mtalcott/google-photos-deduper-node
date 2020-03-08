@@ -136,6 +136,7 @@ app.get('/reset/:token', userController.getReset);
 app.post('/reset/:token', userController.postReset);
 app.get('/signup', userController.getSignup);
 app.post('/signup', userController.postSignup);
+app.get('/start', passportConfig.isAuthenticated, jobController.start);
 app.post('/job', passportConfig.isAuthenticated, jobController.postJob);
 app.get('/job/:id', passportConfig.isAuthenticated, jobController.getJob);
 app.get('/contact', contactController.getContact);

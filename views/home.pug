@@ -3,24 +3,29 @@ extends layout-mdl
 block content
   #home.mdl-layout__tab-panel.is-active
     section.section--center.mdl-grid.mdl-grid--no-spacing.mdl-shadow--2dp
-      header.section__play-btn.mdl-cell.mdl-cell--3-col-desktop.mdl-cell--2-col-tablet.mdl-cell--4-col-phone.mdl-color--teal-100.mdl-color-text--white
-        i.material-icons play_circle_filled
-      .mdl-card.mdl-cell.mdl-cell--9-col-desktop.mdl-cell--6-col-tablet.mdl-cell--4-col-phone
+      .mdl-card.mdl-cell.mdl-cell--12-col
         .mdl-card__supporting-text
-          h4 Features
-          | Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse.
-        .mdl-card__actions
-          form.inline(method="post" action="/job")
-            input(type='hidden', name='_csrf', value=_csrf)
-            button.mdl-button(type="submit") Get started
-          //- a.mdl-button(href='/start') Get started
-      button#btn1.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--icon
-        i.material-icons more_vert
-      ul.mdl-menu.mdl-js-menu.mdl-menu--bottom-right(for='btn1')
-        li.mdl-menu__item Lorem
-        li.mdl-menu__item(disabled='') Ipsum
-        li.mdl-menu__item Dolor
+          h4 What is Photos Deduper?
+          p 
+            strong Photos Deduper 
+            | is a tool you can use to detect and remove duplicate photos from your Google Photos library.
+          p In more recent years, Google Photos has added duplicate detection when photos are first uploaded. 
+            | However, that wasn't always the case. You may have many duplicates, and there is 
+            a(href="https://support.google.com/photos/thread/3954223?hl=en") not a great way to remove them 
+            | without re-uploading your entire collection, which will remove album organization and photo descriptions.
     section.section--center.mdl-grid.mdl-grid--no-spacing.mdl-shadow--2dp
+      .mdl-card.mdl-cell.mdl-cell--12-col
+        .mdl-card__supporting-text
+          h4 Get Started
+          p We'll need access to your Google Photos library to get started and look for duplicates. Once we find them, we'll add them to an album called 
+            em Duplicate Photos 
+            | for you to review.
+        .mdl-card__actions
+          //- form.inline(method="post" action="/job")
+          //-   input(type='hidden', name='_csrf', value=_csrf)
+          //-   button.mdl-button(type="submit") Get started
+          a.mdl-button(href='/start') Get started
+    // section.section--center.mdl-grid.mdl-grid--no-spacing.mdl-shadow--2dp
       .mdl-card.mdl-cell.mdl-cell--12-col
         .mdl-card__supporting-text.mdl-grid.mdl-grid--no-spacing
           h4.mdl-cell.mdl-cell--12-col Details
@@ -47,38 +52,8 @@ block content
             | .
         .mdl-card__actions
           a.mdl-button(href='#') Read our features
-      button#btn2.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--icon
-        i.material-icons more_vert
-      ul.mdl-menu.mdl-js-menu.mdl-menu--bottom-right(for='btn2')
-        li.mdl-menu__item Lorem
-        li.mdl-menu__item(disabled='') Ipsum
-        li.mdl-menu__item Dolor
-    section.section--center.mdl-grid.mdl-grid--no-spacing.mdl-shadow--2dp
-      .mdl-card.mdl-cell.mdl-cell--12-col
-        .mdl-card__supporting-text
-          h4 Technology
-          |                 Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse. Pariatur occaecat nisi laboris tempor laboris eiusmod qui id Lorem esse commodo in. Exercitation aute dolore deserunt culpa consequat elit labore incididunt elit anim.
-        .mdl-card__actions
-          a.mdl-button(href='#') Read our features
-      button#btn3.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--icon
-        i.material-icons more_vert
-      ul.mdl-menu.mdl-js-menu.mdl-menu--bottom-right(for='btn3')
-        li.mdl-menu__item Lorem
-        li.mdl-menu__item(disabled='') Ipsum
-        li.mdl-menu__item Dolor
-    section.section--footer.mdl-color--white.mdl-grid
-      .section__circle-container.mdl-cell.mdl-cell--2-col.mdl-cell--1-col-phone
-        .section__circle-container__circle.mdl-color--accent.section__circle--big
-      .section__text.mdl-cell.mdl-cell--4-col-desktop.mdl-cell--6-col-tablet.mdl-cell--3-col-phone
-        h5 Lorem ipsum dolor sit amet
-        |               Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
-      .section__circle-container.mdl-cell.mdl-cell--2-col.mdl-cell--1-col-phone
-        .section__circle-container__circle.mdl-color--accent.section__circle--big
-      .section__text.mdl-cell.mdl-cell--4-col-desktop.mdl-cell--6-col-tablet.mdl-cell--3-col-phone
-        h5 Lorem ipsum dolor sit amet
-        |               Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
   #faq.mdl-layout__tab-panel
-    section.section--center.mdl-grid.mdl-grid--no-spacing
+    section.section--center.mdl-grid.mdl-grid
       .mdl-cell.mdl-cell--12-col
         h4 Features
         |               Minim duis incididunt est cillum est ex occaecat consectetur. Qui sint ut et qui nisi cupidatat. Reprehenderit nostrud proident officia exercitation anim et pariatur ex.
@@ -97,5 +72,3 @@ block content
           | Sit qui est voluptate proident minim cillum in aliquip cupidatat labore pariatur id tempor id. Proident occaecat occaecat sint mollit tempor duis dolor cillum anim. Dolore sunt ea mollit fugiat in aliqua consequat nostrud aliqua ut irure in dolore. Proident aliqua culpa sint sint exercitation. Non proident occaecat reprehenderit veniam et proident dolor id culpa ea tempor do dolor. Nulla adipisicing qui fugiat id dolor. Nostrud magna voluptate irure veniam veniam labore ipsum deserunt adipisicing laboris amet eu irure. Sunt dolore nisi velit sit id. Nostrud voluptate labore proident cupidatat enim amet Lorem officia magna excepteur occaecat eu qui. Exercitation culpa deserunt non et tempor et non.
         p
           | Do dolor eiusmod eu mollit dolore nostrud deserunt cillum irure esse sint irure fugiat exercitation. Magna sit voluptate id in tempor elit veniam enim cupidatat ea labore elit. Aliqua pariatur eu nulla labore magna dolore mollit occaecat sint commodo culpa. Eu non minim duis pariatur Lorem quis exercitation. Sunt qui ex incididunt sit anim incididunt sit elit ad officia id.
-          
-  

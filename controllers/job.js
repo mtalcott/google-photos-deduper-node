@@ -3,6 +3,37 @@ const ObjectId = require('mongoose').Types.ObjectId;
 const JobStatus = require('../models/JobStatus');
 
 /**
+ * GET /start
+ * Landing page for a logged-in user to start a new job or view an in-progress job.
+ */
+exports.start = async (req, res) => {
+  let jobs = await agenda.jobs({
+    name: 'photos',
+    "data.userId": req.user._id
+  });
+  let job = jobs[0];
+  let jobStatus, jobId;
+  if (job) {
+    jobId = job.attrs._id;
+    jobStatus = await JobStatus.findOne({jobId});
+  }
+
+  res.format({
+    json: () => {
+      res.json({success: true, data: {job, jobStatus}});
+    },
+    html: () => {
+      res.render('start', {
+        title: 'Start',
+        job,
+        jobStatus
+      });
+    }
+  });
+};
+
+
+/**
  * POST /job
  * Start a new job.
  */
@@ -23,8 +54,8 @@ exports.postJob = async (req, res) => {
 };
 
 /**
- * GET /job
- * View job status.
+ * GET /job/:id
+ * View specific job status.
  */
 exports.getJob = async (req, res) => {
   let jobId = req.params.id;
@@ -35,8 +66,6 @@ exports.getJob = async (req, res) => {
   });
   let job = jobs[0];
   let jobStatus = await JobStatus.findOne({jobId});
-  
-  
 
   res.format({
     json: () => {

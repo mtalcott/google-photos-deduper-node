@@ -1,12 +1,12 @@
 header.mdl-layout__header.mdl-layout__header--scroll.mdl-color--primary
   //- .mdl-layout--large-screen-only.mdl-layout__header-row
   .mdl-layout__header-row
-    .mdl-layout-title Name &amp; Title
+    .mdl-layout-title Photos Deduper
     .mdl-layout-spacer
     nav.mdl-navigation
       if !user
         a.mdl-navigation__link(href='/login' class=(title === 'Login') ? 'is-active' : undefined) Login
-        a.mdl-navigation__link(href='/signup' class=(title === 'Create Account') ? 'is-active' : undefined) Create Account
+        //- a.mdl-navigation__link(href='/signup' class=(title === 'Create Account') ? 'is-active' : undefined) Create Account
       else
         //- label.mdl-button.mdl-js-button.mdl-button--icon
         //-   i.material-icons search
@@ -25,8 +25,9 @@ header.mdl-layout__header.mdl-layout__header--scroll.mdl-color--primary
     
   //- .mdl-layout--large-screen-only.mdl-layout__header-row
   .mdl-layout__tab-bar.mdl-js-ripple-effect.mdl-color--primary-dark
-    a.mdl-layout__tab.is-active(href='#home') Home
-    a.mdl-layout__tab(href='#faq') FAQ
+    a.mdl-layout__tab(href='/') Home
+    //- a.mdl-layout__tab.is-active(href='/') Home
+    a.mdl-layout__tab(href='/start') Get Started
     .mdl-layout-spacer
 
 

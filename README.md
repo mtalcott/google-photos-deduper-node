@@ -1,7 +1,5 @@
-⚠️ **Deprecated, superseded by https://github.com/mtalcott/google-photos-deduper-python** ⚠️
-
 # Google Photos Deduper
 
-Personal project by [Mack Talcott](https://github.com/mtalcott).
+⚠️ **Deprecated, superseded by https://github.com/mtalcott/google-photos-deduper-python** ⚠️
 
-Boilerplate from [Hackathon Starter](https://github.com/sahat/hackathon-starter/).
+Personal project by [Mack Talcott](https://github.com/mtalcott). Boilerplate from [Hackathon Starter](https://github.com/sahat/hackathon-starter/).
